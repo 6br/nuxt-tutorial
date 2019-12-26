@@ -41,12 +41,12 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['@/plugins/vuetify'],
+  plugins: ['@/plugins/vuetify',   '~/plugins/components'],
 
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', ['storyblok-nuxt', {accessToken: 'CIg6AaQfpQIhcVex6iZNFAtt', cacheProvider: 'memory'}]],
 
   /*
   ** Build configuration
@@ -69,7 +69,7 @@ module.exports = {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+         //  loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
       }
